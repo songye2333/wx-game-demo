@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="game-header">
+    <view class="score">得分: {{score}}</view>
+    <view class="timer">时间: {{timeLeft}}s</view>
+  </view>
+  
+  <view class="game-area" bindtouchstart="handleTouch">
+    <view class="target {{isActive ? 'active' : ''}}" 
+          style="left: {{targetPosition.x}}rpx; top: {{targetPosition.y}}rpx;">
+      点我
+    </view>
+  </view>
+
+  <view class="game-controls">
+    <button class="control-btn" bindtap="startGame" wx:if="{{!isPlaying}}">
+      {{gameOver ? '重新开始' : '开始游戏'}}
+    </button>
+    <button class="control-btn" bindtap="pauseGame" wx:if="{{isPlaying}}">暂停</button>
+  </view>
+
+  <view class="game-over" wx:if="{{gameOver}}">
+    <view class="game-over-text">游戏结束!</view>
+    <view class="final-score">最终得分: {{score}}</view>
+  </view>
+</view> 

@@ -1,0 +1,230 @@
+/* 游戏容器 */
+.game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 虚拟摇杆 */
+.joystick-container {
+    position: fixed;
+    bottom: 100px;
+    left: 50px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    touch-action: none;
+}
+
+.joystick {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+}
+
+/* 操作按钮 */
+.action-button {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    user-select: none;
+}
+
+.dash-button {
+    bottom: 100px;
+    right: 150px;
+}
+
+.attack-button {
+    bottom: 100px;
+    right: 50px;
+}
+
+/* 状态栏 */
+.status-bar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+}
+
+.score-display {
+    flex: 1;
+    font-size: 18px;
+}
+
+.dash-energy {
+    width: 200px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 20px;
+}
+
+.dash-energy-fill {
+    height: 100%;
+    background: #4CAF50;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.pause-button {
+    width: 60px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* 菜单 */
+.menu-base {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    min-width: 300px;
+}
+
+/* 暂停菜单 */
+.pause-menu {
+    composes: menu-base;
+}
+
+.pause-menu button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 商店界面 */
+.shop-ui {
+    composes: menu-base;
+}
+
+.shop-section {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.shop-section h2 {
+    margin: 0 0 20px 0;
+    color: #333;
+}
+
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.shop-item {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.shop-item button {
+    margin-top: 10px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+/* 角色定制界面 */
+.customization-ui {
+    composes: menu-base;
+}
+
+.customization-section {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.customization-option {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.customization-option button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: #4CAF50;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+/* 通用样式 */
+.hidden {
+    display: none !important;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #f44336;
+    color: white;
+    cursor: pointer;
+} 

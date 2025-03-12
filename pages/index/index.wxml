@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="title">欢迎来到小游戏</view>
+  <view class="user-info" wx:if="{{hasUserInfo}}">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text class="nickname">{{userInfo.nickName}}</text>
+  </view>
+  <button class="start-btn" bindtap="startGame">开始游戏</button>
+  <button wx:if="{{!hasUserInfo}}" class="login-btn" bindtap="getUserProfile">登录</button>
+</view> 

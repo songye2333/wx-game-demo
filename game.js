@@ -1,6 +1,8 @@
+// 首先导入适配器
 import './js/libs/weapp-adapter';
 import './js/libs/symbol';
 
+// 然后导入游戏主类
 import { Game } from './game/Game';
 
 // 初始化 Canvas

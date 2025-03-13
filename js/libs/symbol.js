@@ -1,12 +1,12 @@
 // Symbol polyfill
-if (!global.Symbol) {
-    global.Symbol = function(description) {
+if (!GameGlobal.Symbol) {
+    GameGlobal.Symbol = function(description) {
         return `Symbol(${description})`;
     };
     
-    global.Symbol.iterator = global.Symbol('Symbol.iterator');
-    global.Symbol.for = global.Symbol;
-    global.Symbol.keyFor = function(sym) {
+    GameGlobal.Symbol.iterator = GameGlobal.Symbol('Symbol.iterator');
+    GameGlobal.Symbol.for = GameGlobal.Symbol;
+    GameGlobal.Symbol.keyFor = function(sym) {
         return sym;
     };
 } 
